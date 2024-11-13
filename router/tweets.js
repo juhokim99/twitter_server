@@ -1,8 +1,13 @@
 import express from 'express'
 import * as tweetController from '../controller/tweet.js'
+import { body } from "express-validator"
+import { validate } from '../middleware/validater.js'
 
 const router = express.Router()
 
+const validateTweet = [
+    body('text').trim().isLength({min:3}).withMessage('최소 3자이상 입력'), validate
+]
 
 // 해당 아이디에 대한 트윗 가져오기
 // GET
