@@ -12,7 +12,7 @@ export const isAuth = async(req, res, next) => {
         return res.status(401).json(AUTH_ERROR)
     }
     const token = authHeader.split(' ')[1]
-
+    
     jwt.verify(
         token, 'abcdefg1234%^&*', async(error, decoded) => {
             if(error){
