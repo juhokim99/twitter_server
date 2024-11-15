@@ -9,7 +9,10 @@ class Socket {
                 origin: '*'
             }
         })
+<<<<<<< HEAD
         // 연습
+=======
+>>>>>>> origin/main
 
         this.io.use((socket, next) =>{
             const token = socket.handshake.auth.token
