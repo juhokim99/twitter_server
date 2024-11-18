@@ -24,11 +24,6 @@ export async function createTweet(req,res,next){
     const { text } =req.body
     const tweet = await tweetRepository.create(text, req.userId)
     res.status(201).json(tweet)
-<<<<<<< HEAD
-    getSocketIo().emit('tweets',tweet)
-=======
-    getSocketIo().emit('tweets', tweet)
->>>>>>> origin/main
 }
 
 // 트윗을 변경하는 함수
