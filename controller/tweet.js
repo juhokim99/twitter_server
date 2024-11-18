@@ -20,11 +20,10 @@ export async function getTweet(req, res, next){
 }
 
 // 트윗을 생성하는 함수
-export async function createTweet(req, res, next) {
-    const { username, name, text } = req.body
-    const tweet = await tweetRepository.create(username, name, text)
+export async function createTweet(req,res,next){
+    const { text } =req.body
+    const tweet = await tweetRepository.create(text, req.userId)
     res.status(201).json(tweet)
-    getSocketIo().emit('tweets', tweet)
 }
 
 // 트윗을 변경하는 함수

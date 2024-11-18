@@ -9,7 +9,6 @@ class Socket {
                 origin: '*'
             }
         })
-
         this.io.use((socket, next) =>{
             const token = socket.handshake.auth.token
             if(!token){
